@@ -1,0 +1,75 @@
+{% extends 'base.html' %} {% block content %}
+<div>
+  <div>
+    <div class="post_title">{{ post.title }}</div>
+    <div class="post_content">{{ post.content }}</div>
+  </div>
+  <a href="{% url 'home' %}">홈으로</a>
+
+  {% if user.is_authenticated and post.author.pk == user.pk %}
+  <a href="{% url 'edit' post.pk %}">수정하기</a>
+  <a href="{% url 'delete' post.pk %}">삭제하기</a>
+  <span class="like-count">좋아요 수 : {{post.likes.count}}</span>
+  {% endif %}
+  <div class="comments">
+    {% for comment in post.comments.all %}
+    <li>{{ comment.content }}</li>
+    {% if user.is_authenticated and comment.author.pk == user.pk %}
+    <a href="{% url 'delete_comment' post.pk comment.pk %}">댓글삭제</a>
+    {% endif %} {% endfor %}
+  </div>
+  {% if user.is_authenticated %}
+  <div>
+    <input
+      type="text"
+      class="comment-input"
+      name="content"
+      placeholder="댓글을 입력하세요"
+    />
+    <button class="comment-button">댓글 쓰기</button>
+  </div>
+  <button class="like-button">좋아요</button>
+  {% endif %}
+</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  const likeButton = document.querySelector(".like-button");
+  const likeCount = document.querySelector(".like-count");
+  const like = () => {
+    axios
+      .post("/like", { post_pk: "{{post.pk}}" })
+      .then(
+        (response) =>
+          (likeCount.innerHTML = "좋아요 수 : " + response.data.like_count)
+      );
+  };
+  likeButton.addEventListener("click", like);
+</script>
+<script>
+  const commentInput = document.querySelector(".comment-input");
+  const commentButton = document.querySelector(".comment-button");
+
+  const addComment = async () => {
+    try {
+      const response = await axios.post("/detail/" + "{{post.pk}}", {
+        post_pk: "{{post.pk}}",
+        content: commentInput.value,
+      });
+
+      console.log(response);
+      //const post_pk = response.data["post_pk"];
+      const content = response.data["content"];
+      //const comment_pk = response.data["comment_pk"];
+
+      const div = document.querySelector(".comments");
+      const li = document.createElement("li");
+      li.innerHTML = content;
+      div.appendChild(li);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+  commentButton.addEventListener("click", addComment);
+</script>
+
+{% endblock content %}
