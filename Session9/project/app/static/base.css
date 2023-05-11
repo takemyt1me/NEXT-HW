@@ -1,0 +1,101 @@
+/* 배경 설정 */
+body {
+  background-color: #f6f685;
+}
+
+/* 박스 스타일 설정 */
+.wrap {
+  width: 80%;
+  margin: auto;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 제목 스타일 설정 */
+.head-container {
+  margin-bottom: 20px;
+}
+
+.head-container h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: fantasy;
+}
+
+/* 폼 요소 스타일 설정 */
+form div {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+  width: 98%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="date"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #3f51b5;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #303f9f;
+}
+
+/* 할 일 목록 스타일 설정 */
+.main-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.main-container li {
+  margin-bottom: 10px;
+}
+
+.main-container li a {
+  color: #3f51b5;
+  text-decoration: none;
+}
+
+.main-container li a:hover {
+  text-decoration: underline;
+}
+
+/* 하단 링크 스타일 설정 */
+.bottom-container a {
+  margin-right: 10px;
+  color: #3f51b5;
+  text-decoration: none;
+}
+
+.bottom-container a:hover {
+  text-decoration: underline;
+}

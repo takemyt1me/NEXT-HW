@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{%static 'base.css'%}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="head-container">
+        <h2>To Do List</h2>
+      </div>
+      <div class="main-container">
+        <ul>
+          {%for todo in todos%}
+          <li>
+            <a href="{% url 'detail' todo.pk %}"
+              >({{todo.get_d_day}}일 전) {{todo.title}}</a
+            >
+            <a href="{% url 'delete' todo.pk %}"> [삭제]</a>
+          </li>
+          {%endfor%}
+        </ul>
+      </div>
+      <div class="bottom-container">
+        <a href="{% url 'new' %}">Add New</a>
+      </div>
+    </div>
+  </body>
+</html>

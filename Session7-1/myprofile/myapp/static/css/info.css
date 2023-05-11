@@ -1,0 +1,74 @@
+.main-container {
+  position: relative;
+  top: 180px;
+}
+.profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.p1 {
+  position: absolute;
+  left: 50%;
+  top: 70px;
+  transform: translate(-50%, 0%);
+  font-weight: bold;
+  font-size: 25px;
+}
+.items {
+  width: 30px;
+  height: 30px;
+}
+.link {
+  position: absolute;
+  left: 50%;
+  top: 140px;
+  transform: translate(-50%, 0%);
+}
+.top-container {
+  position: fixed;
+  width: 1500px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  height: 50px;
+  border-bottom: solid 1px black;
+  z-index: 1;
+  background-color: white;
+}
+.header {
+  position: absolute;
+  left: 15%;
+  top: 30%;
+  font-family: fantasy;
+  z-index: 2;
+}
+.intro {
+  position: absolute;
+  text-align: center;
+  top: 180px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  color: gray;
+}
+.bottom-container {
+  position: fixed;
+  top: 580px;
+  width: 1500px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  height: 50px;
+  border-top: solid 1px black;
+  z-index: 1;
+  background-color: white;
+}
+.link-project {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  font-family: fantasy;
+  color: black;
+}

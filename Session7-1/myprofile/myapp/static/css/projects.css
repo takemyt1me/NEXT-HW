@@ -1,0 +1,46 @@
+.top-container {
+  position: fixed;
+  width: 1500px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  height: 50px;
+  border-bottom: solid 1px black;
+  z-index: 1;
+  background-color: white;
+}
+.header {
+  position: absolute;
+  left: 15%;
+  top: 30%;
+  font-family: fantasy;
+  z-index: 2;
+}
+.main-container {
+  position: relative;
+  top: 80px;
+  display: block;
+}
+.project1 {
+  width: 275px;
+  height: 550px;
+  position: absolute;
+  left: 15%;
+}
+.project2 {
+  width: 275px;
+  height: 550px;
+  left: 40%;
+  position: absolute;
+}
+.project-name1 {
+  position: absolute;
+  top: 560px;
+  left: 15%;
+  color: black;
+}
+.project-name2 {
+  position: absolute;
+  top: 560px;
+  left: 40%;
+  color: black;
+}

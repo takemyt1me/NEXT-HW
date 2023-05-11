@@ -1,0 +1,36 @@
+{%extends 'base.html'%} {%block css%} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}" />
+{%endblock%} {%block title%}
+<h2>Detail</h2>
+{%endblock%} {%block content%}
+<p>Title: {{ post.title }} ({{post.created_at}})</p>
+<p>Category: {{post.category}}</p>
+<p>Content: {{ post.content }}</p>
+<div class="comments">
+  <form action="" method="post">
+    {%csrf_token%}
+    <input type="text" name="content" placeholder="Write a comment" />
+    <button type="submit">submit</button>
+  </form>
+  <ul>
+    {%for comment in comments%}
+    <li>
+      {{comment.content}}
+      <form action="" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="comment_id" value="{{ comment.id }}" />
+        <input type="text" name="content" />
+        <button type="submit">submit</button>
+      </form>
+    </li>
+    <ul>
+      {%for recomment in comment.recomments.all %}
+      <li>{{recomment.content}}</li>
+    </ul>
+    {%endfor%}
+  </ul>
+  {%endfor%}
+</div>
+{%endblock%} {%block button%}
+<a href="{%	url 'home'	%}">Home</a>
+{%endblock%}

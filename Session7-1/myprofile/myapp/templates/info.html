@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>info</title>
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/info.css'%}" />
+  </head>
+  </head>
+  <body>
+    <div class="container">
+        <div class="top-container">
+            <span class="header">KYOUNGJIN KIM</span>
+        </div>
+        <div class="main-container">
+            <img class="profile" src="{% static '/images/profile.jpg'%}">
+            <p class="p1">ABOUT ME</p>
+            <div class="link">
+                <img class="items" src="{% static '/images/call.png'%}">
+                <a href="mailto:rudwls344@gmail.com"></a><img class="items" src="{% static '/images/email.png'%}"></a>
+                <a href="https://github.com/takemyt1me"><img class="items" src="{% static '/images/github.png'%}"></a>
+                <a href="https://www.instagram.com/takemyt1me_/"><img class="items" src="{% static '/images/instagram.png'%}"></a>
+            </div>
+            <p class="intro">안녕하세요! ‘나’를 찾는 여행 중인 김경진이라고 합니다! 
+            </br>제가 최근 가장 관심 있는 것은 바로 저 자신인데요.
+            </br>나는 무엇을 좋아하는 사람인지
+            </br>어떨 때 행복하고 어떨 때 우울한지
+            </br>그리고 나는 무엇을 하며 살아가야 하는 사람인지 열심히 찾고있는 중입니다! 
+            </br>그 여정을 NEXT와 함께하게 되어 너무 설렙니다!</p>
+        </div>
+        <div class="bottom-container">
+          <a class="link-project" href="{% url 'projects' %}">PROJECTS</a>
+        </div>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block css %} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'category.css' %}" />
+{%endblock%} {%block title%}
+<h2>Post List</h2>
+{%endblock%} {%block content%}
+<ul>
+  {%for post in category_post %}
+  <li><a href="{%	url 'detail'	post.pk %}">{{post.title}}</a></li>
+  {%endfor%}
+</ul>
+{%endblock%} {%block button%}
+<a href="{%	url 'home'	%}">Home</a>
+{%endblock%}

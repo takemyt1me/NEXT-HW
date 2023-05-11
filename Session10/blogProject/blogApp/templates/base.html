@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{%static 'base.css' %}" />
+    {% block css %} {% endblock css%}
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="title">{%block title %}{% endblock title%}</div>
+      <div class="content-box">{%block content%}{%endblock content%}</div>
+      <div class="button">{%block button%}{%endblock button%}</div>
+      <footer>
+        <p>
+          개인정보 처리방침 | 이용약관 | 문의하기 <br />©takemyt1me all rights
+          reserved
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
